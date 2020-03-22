@@ -1,0 +1,17 @@
+
+--- USERS
+
+GET     /users/             =>  devuelve todos los usuarios cargados en la badse de datos
+        /users/:id          =>  devuelve el user cuyo id en la base de datos es :id         
+
+POST    /users/             => creacion de usuario        
+
+
+--- COMPS (COMPANYS)
+
+GET     /comps/                 => devuelve todos los comprobantes que hay en la base de datos
+        /comps/:id              => retorna el comprobantes cuyo id es :id
+        /comps/user/:iduser     => devuelve todos los comprobantes que tienen en el campo iduser el parametro :iduser
+
+
+POST    /comps/                 => crea una company

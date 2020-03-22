@@ -1,0 +1,29 @@
+﻿               Tabla ½public.comps╗
+ Columna |          Tipo          | Modificadores
+---------+------------------------+---------------
+ id      | integer                | not null
+ name    | character varying(100) | not null
+ address | character varying(100) |
+ sector  | character varying(100) |
+ cuit    | character varying(15)  |
+ userid  | integer                | not null
+═ndices:
+    "pk_idcomp" PRIMARY KEY, btree (id)
+Restricciones de llave forßnea:
+    "fgk_userid" FOREIGN KEY (userid) REFERENCES users(id)
+
+
+
+
+
+                                       Tabla ½public.users╗
+ Columna  |          Tipo          |                        Modificadores
+----------+------------------------+--------------------------------------------------------------
+ id       | integer                | not null valor por omisi¾n nextval('users_id_seq'::regclass)
+ name     | character varying(150) | not null
+ email    | character varying(150) | not null
+ password | character varying(150) | not null
+═ndices:
+    "users_id_key" UNIQUE CONSTRAINT, btree (id)
+Referenciada por:
+    TABLE "comps" CONSTRAINT "fgk_userid" FOREIGN KEY (userid) REFERENCES users(id)
